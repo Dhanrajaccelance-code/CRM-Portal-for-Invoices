@@ -36,7 +36,7 @@ class ApiService {
   ): Promise<T> {
     const { requiresAuth = true, headers = {}, ...restConfig } = config;
 
-    const url = ${this.baseURL}${endpoint};
+    const url = `${this.baseURL}${endpoint}`;
 
     const defaultHeaders: Record<string, string> = {
       'Content-Type': 'application/json',
