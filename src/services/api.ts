@@ -1,4 +1,4 @@
-import { ApiError } from '../types';
+import type { ApiError } from '../types';
 
 interface RequestConfig extends RequestInit {
   requiresAuth?: boolean;
@@ -36,7 +36,7 @@ class ApiService {
   ): Promise<T> {
     const { requiresAuth = true, headers = {}, ...restConfig } = config;
 
-    const url = `${this.baseURL}${endpoint}`;
+    const url = ${this.baseURL}${endpoint};
 
     const defaultHeaders: Record<string, string> = {
       'Content-Type': 'application/json',
@@ -44,7 +44,7 @@ class ApiService {
     };
 
     if (requiresAuth && this.token) {
-      defaultHeaders['Authorization'] = `Bearer ${this.token}`;
+      defaultHeaders['Authorization'] = Bearer ${this.token};
     }
 
     try {
